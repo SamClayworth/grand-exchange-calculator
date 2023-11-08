@@ -5,27 +5,86 @@
 }
 
 body {
-  background: gold;
+  display: flex;
+  align-items: center;
+  background: url(/images/GrandLoungeBackground.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  height: 100vh;
+  font-family: "Oswald", sans-serif;
+  color: gold;
 }
 
 table {
   table-layout: fixed;
   width: 100%;
+  text-transform: capitalize;
 }
 
 input {
   width: 50px;
+  color: gold;
+  background: none;
+  border: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+input:hover {
+  border: 1px solid gold;
 }
 
 .container {
-  background: beige;
+  background: black;
+  opacity: 0.7;
   width: 90%;
   margin: 0 auto;
   border-radius: 10px;
+  padding: 50px;
 }
 
 .total {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 30px;
+}
+
+.items {
+  opacity: 1;
+}
+
+.total p {
+  font-size: 3em;
+}
+
+.totals {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.totals span {
+  font-size: 3rem;
+}
+
+#clear-btn {
+  padding: 10px 40px;
+  background: none;
+  border: 0;
+  color: gold;
+  border: 2px solid gold;
+}
+
+#clear-btn:hover {
+  background-color: gold;
+  color: black;
+  opacity: 0.8;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
