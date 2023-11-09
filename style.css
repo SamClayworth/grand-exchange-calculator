@@ -105,5 +105,6 @@ input:hover {
 @media (max-width: 520px) {
   .totals {
     padding: 40px;
+    flex-direction: column;
   }
 }
