@@ -44,7 +44,7 @@ items.forEach((item) => {
   quantityInput.value = 0;
 
   const itemPriceResultCell = document.createElement("td");
-  itemPriceResultCell.textContent = "$0";
+  itemPriceResultCell.textContent = `$0.00`;
 
   quantityInput.addEventListener("input", () => {
     const quantity = parseInt(quantityInput.value, 10);
