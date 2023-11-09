@@ -102,9 +102,12 @@ input:hover {
   cursor: pointer;
 }
 
-@media (max-width: 520px) {
-  .totals {
-    padding: 40px;
+@media (max-width: 600px) {
+  .total {
     flex-direction: column;
+  }
+
+  .totals {
+    margin-top: 30px;
   }
 }
