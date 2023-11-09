@@ -4,7 +4,7 @@ let totalPrice = 0;
 
 const totals = document.querySelector(".total");
 const totalAmount = document.getElementById("total-amount");
-
+const itemsPriceResult = [];
 const itemCalculator = document.querySelector(".items");
 
 let itemPrices = [];
@@ -19,14 +19,30 @@ items.forEach((item) => {
   const itemNameCell = document.createElement("td");
   itemNameCell.textContent = `${item.name}`;
 
-  const itemPriceCell = document.createElement("td");
+  let itemPriceCell = document.createElement("input");
+  itemPriceCell.value = item.price;
   itemPriceCell.textContent = `$${item.price}`;
+  itemPriceCell.type = "number";
+  itemPriceCell.className = "price-input";
+
+  itemPriceCell.addEventListener("input", () => {
+    const newPrice = parseFloat(itemPriceCell.value);
+    item.price = newPrice;
+
+    const quantity = parseInt(quantityInput.value);
+    const totalPriceForItem = newPrice * quantity;
+    itemPriceResultCell.textContent = `$${totalPriceForItem}`;
+
+    itemPrices[item.id] = totalPriceForItem;
+
+    calculateTotalPrice();
+  });
 
   const quantityInputCell = document.createElement("td");
   let quantityInput = document.createElement("input");
   quantityInput.type = "number";
   quantityInput.min = "0";
-  quantityInput.value = "0";
+  quantityInput.className = "quantity-input";
 
   const itemPriceResultCell = document.createElement("td");
   itemPriceResultCell.textContent = "$0";
@@ -47,6 +63,8 @@ items.forEach((item) => {
 
   itemTable.appendChild(itemRow);
   itemCalculator.appendChild(itemTable);
+
+  itemsPriceResult.push(itemPriceResultCell);
 });
 
 const calculateTotalPrice = () => {
@@ -61,6 +79,13 @@ document.getElementById("clear-btn").addEventListener("click", () => {
   quantityInputs.forEach((input) => {
     input.value = 0;
   });
+
+  itemsPriceResult.forEach((resultCell) => {
+    resultCell.textContent = "$0";
+  });
+
+  itemPrices = [];
+  calculateTotalPrice();
 });
 
 calculateTotalPrice();

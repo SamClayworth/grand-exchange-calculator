@@ -258,4 +258,11 @@ export const items = [
     price: 18,
     category: "Miner",
   },
+  {
+    id: 33,
+    name: "jewelry",
+    quantity: 0,
+    price: 25,
+    category: "Collectible",
+  },
 ];
