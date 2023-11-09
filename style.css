@@ -21,6 +21,7 @@ header {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  margin-top: -20px;
 }
 
 header img {
@@ -33,6 +34,10 @@ table {
   width: 100%;
   text-transform: capitalize;
   border-bottom: 1px solid gold;
+}
+
+.table-categories {
+  text-align: left;
 }
 
 input {

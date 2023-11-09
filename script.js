@@ -20,7 +20,6 @@ items.forEach((item) => {
 
   let itemPriceCell = document.createElement("input");
   itemPriceCell.value = item.price;
-  itemPriceCell.textContent = `$${item.price}`;
   itemPriceCell.type = "number";
   itemPriceCell.className = "price-input";
 
