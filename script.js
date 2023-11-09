@@ -2,7 +2,6 @@ import { items } from "./prices.js";
 
 let totalPrice = 0;
 
-const totals = document.querySelector(".total");
 const totalAmount = document.getElementById("total-amount");
 const itemsPriceResult = [];
 const itemCalculator = document.querySelector(".items");
@@ -31,7 +30,7 @@ items.forEach((item) => {
 
     const quantity = parseInt(quantityInput.value);
     const totalPriceForItem = newPrice * quantity;
-    itemPriceResultCell.textContent = `$${totalPriceForItem}`;
+    itemPriceResultCell.textContent = `$${totalPriceForItem.toFixed(2)}`;
 
     itemPrices[item.id] = totalPriceForItem;
 
@@ -43,6 +42,7 @@ items.forEach((item) => {
   quantityInput.type = "number";
   quantityInput.min = "0";
   quantityInput.className = "quantity-input";
+  quantityInput.value = 0;
 
   const itemPriceResultCell = document.createElement("td");
   itemPriceResultCell.textContent = "$0";
@@ -50,7 +50,7 @@ items.forEach((item) => {
   quantityInput.addEventListener("input", () => {
     const quantity = parseInt(quantityInput.value, 10);
     const price = item.price * quantity;
-    itemPriceResultCell.textContent = `$${price}`;
+    itemPriceResultCell.textContent = `$${price.toFixed(2)}`;
     itemPrices[item.id] = price;
     calculateTotalPrice();
   });
@@ -70,12 +70,12 @@ items.forEach((item) => {
 const calculateTotalPrice = () => {
   totalPrice = itemPrices.reduce((total, price) => total + (price || 0), 0);
   console.log(totalPrice);
-  totalAmount.textContent = `$${totalPrice}`;
+  totalAmount.textContent = `$${totalPrice.toFixed(0)}`;
 };
 
 document.getElementById("clear-btn").addEventListener("click", () => {
   totalAmount.textContent = "$0";
-  const quantityInputs = document.querySelectorAll("input[type='number']");
+  const quantityInputs = document.querySelectorAll(".quantity-input");
   quantityInputs.forEach((input) => {
     input.value = 0;
   });

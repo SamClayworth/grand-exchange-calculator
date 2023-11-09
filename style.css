@@ -12,9 +12,20 @@ body {
   background-position: center;
   background-size: cover;
   backdrop-filter: blur(5px);
-  height: 100vh;
+  height: auto;
   font-family: "Oswald", sans-serif;
   color: gold;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+header img {
+  width: 35px;
+  margin-left: 10px;
 }
 
 table {
@@ -51,7 +62,7 @@ input:hover {
 
 .total {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 30px;
 }
@@ -89,4 +100,10 @@ input:hover {
   opacity: 0.8;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .totals {
+    padding: 40px;
+  }
 }
