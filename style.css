@@ -67,7 +67,7 @@ input:hover {
 
 .total {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 30px;
 }
@@ -83,7 +83,6 @@ input:hover {
 .totals {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2rem;
 }
 
