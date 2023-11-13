@@ -1,5 +1,7 @@
 import { items } from "./prices.js";
 
+items.sort((a, b) => a.name.localeCompare(b.name));
+
 let totalPrice = 0;
 
 const totalAmount = document.getElementById("total-amount");
@@ -14,10 +16,10 @@ items.forEach((item) => {
 
   //create a table row for every item
   const itemRow = document.createElement("tr");
+
   // create table cells for item name, price, quantity, and total
   const itemNameCell = document.createElement("td");
   itemNameCell.textContent = `${item.name}`;
-
   let itemPriceCell = document.createElement("input");
   itemPriceCell.value = item.price;
   itemPriceCell.type = "number";
