@@ -11,15 +11,13 @@ const itemCalculator = document.querySelector(".items");
 let itemPrices = [];
 
 items.forEach((item) => {
-  // creates a new table element for every item
   const itemTable = document.createElement("table");
 
-  //create a table row for every item
   const itemRow = document.createElement("tr");
 
-  // create table cells for item name, price, quantity, and total
   const itemNameCell = document.createElement("td");
   itemNameCell.textContent = `${item.name}`;
+
   let itemPriceCell = document.createElement("input");
   itemPriceCell.value = item.price;
   itemPriceCell.type = "number";
@@ -75,14 +73,14 @@ const calculateTotalPrice = () => {
 };
 
 document.getElementById("clear-btn").addEventListener("click", () => {
-  totalAmount.textContent = "$0";
+  totalAmount.textContent = "$0.00";
   const quantityInputs = document.querySelectorAll(".quantity-input");
   quantityInputs.forEach((input) => {
     input.value = 0;
   });
 
   itemsPriceResult.forEach((resultCell) => {
-    resultCell.textContent = "$0";
+    resultCell.textContent = "$0.00";
   });
 
   itemPrices = [];
