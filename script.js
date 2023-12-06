@@ -1,6 +1,6 @@
 import { items } from "./prices.js";
 
-items.sort((a, b) => b.category.localeCompare(a.category));
+items.sort((a, b) => a.name.localeCompare(b.name));
 
 let totalPrice = 0;
 
